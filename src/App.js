@@ -10,13 +10,19 @@ import ExpensesCreatePage from './pages/ExpensesPages/ExpensesCreatePage';
 import ExpensesEditPage from './pages/ExpensesPages/ExpensesEditPage';
 import ExpensesShowPage from './pages/ExpensesPages/ExpensesShowPage';
 
+import LoginPage from './pages/LoginPage'
+
 function App() {
 
   return (
     <Router>
      {/* ルートの設定 */}
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/" element={<Login/>} /> */}
+
+        <Route path="/" element={<LoginPage />} />
+        
+        <Route path="/home" element={<HomePage />} />
 
         <Route path="/event/index" element={<EventsIndexPage />} />
         <Route path="/event/create" element={<EventsCreatePage />} />
