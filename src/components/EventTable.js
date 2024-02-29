@@ -27,7 +27,7 @@ function EventTable() {
   },[] )
 
   return (
-    <div className="EventTable">
+    <div className="EventTable" class="">
       <table>
         <thead>
           <tr>
@@ -44,10 +44,10 @@ function EventTable() {
             <td>{event.theme}</td>
             <td>{event.date}</td>
             <td>
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <button class="w-1/4 bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                   <Link to="/event/edit">編集</Link>
               </button>
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <button class="w-1/4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 <Link to="/expenses/create">会計申請</Link>
               </button>
             </td>
