@@ -26,7 +26,7 @@ function App() {
 
         <Route path="/event/index" element={<EventsIndexPage />} />
         <Route path="/event/create" element={<EventsCreatePage />} />
-        <Route path="/event/edit" element={<EventsEditPage />} />
+        <Route path="/event/edit/:eventId" element={<EventsEditPage />} />
       
         <Route path="/expenses/index" element={<ExpensesIndexPage />} />
         <Route path="/expenses/create" element={<ExpensesCreatePage />} />

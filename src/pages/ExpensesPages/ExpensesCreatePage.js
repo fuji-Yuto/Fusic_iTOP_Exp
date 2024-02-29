@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Navbar from '../../components/Navbar';
 
 function EventCreatePage() {
   return (
     <div>
+      <Navbar></Navbar>
       <h1>会計申請</h1>;
 
       <p>いい感じにフォーム作る</p>
