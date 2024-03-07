@@ -13,35 +13,46 @@ import ExpensesShowPage from './pages/ExpensesPages/ExpensesShowPage';
 import UserIndexPage from './pages/UserPages/UserIndexPage';
 import UserCreatePage from './pages/UserPages/UserCreatePage';
 import UserEditPage from './pages/UserPages/UserEditPage';
+import UserConfirmationPage from './pages/UserPages/UserConfirmationPage';
+
+import ForgetPasswordPage from './pages/ForgetPassword';
 
 import LoginPage from './pages/LoginPage'
+
+import { AuthProvider } from './AuthContext';
+import PrivateRoute from './PrivateRoute';
 
 function App() {
 
   return (
     <Router>
-     {/* ルートの設定 */}
-      <Routes>
-        {/* <Route path="/" element={<Login/>} /> */}
+      <AuthProvider>
+        <Routes>
+          {/* <Route path="/" element={<Login/>} /> */}
 
-        <Route path="/" element={<LoginPage />} />
-        
-        <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/forgetpassword" element={ <ForgetPasswordPage/>} />
+          
+          <Route element={<PrivateRoute/>}>
+            <Route path="/home" element={<HomePage />} />
 
-        <Route path="/event/index" element={<EventsIndexPage />} />
-        <Route path="/event/create" element={<EventsCreatePage />} />
-        <Route path="/event/edit/:eventId" element={<EventsEditPage />} />
-      
-        <Route path="/expenses/index" element={<ExpensesIndexPage />} />
-        <Route path="/expenses/create" element={<ExpensesCreatePage />} />
-        <Route path="/expenses/show" element={<ExpensesShowPage />} />
-        <Route path="/expenses/edit" element={<ExpensesEditPage />} />
+            <Route path="/event/index" element={<EventsIndexPage />} />
+            <Route path="/event/create" element={<EventsCreatePage />} />
+            <Route path="/event/edit/:eventId" element={<EventsEditPage />} />
+          
+            <Route path="/expenses/index" element={<ExpensesIndexPage />} />
+            <Route path="/expenses/create" element={<ExpensesCreatePage />} />
+            <Route path="/expenses/show" element={<ExpensesShowPage />} />
+            <Route path="/expenses/edit" element={<ExpensesEditPage />} />
 
-        <Route path="/user/index" element={<UserIndexPage />} ></Route>
-        <Route path="/user/create" element={<UserCreatePage />} ></Route>
-        <Route path="/user/edit" element={<UserEditPage/> } ></Route>
-        
-      </Routes>
+            <Route path="/user/index" element={<UserIndexPage />} />
+            <Route path="/user/create" element={<UserCreatePage />} />
+            <Route path="/user/confirm" element={<UserConfirmationPage />} />
+            <Route path="/user/edit" element={<UserEditPage/> } />
+          </Route>
+
+        </Routes>
+      </AuthProvider>
 
 
     </Router>

@@ -13,14 +13,17 @@ const ExpensesIndexPage = () => {
 
     return (
         <div>
-        <Navbar></Navbar>    
+        <Navbar></Navbar>
         <div className="flex justify-center mt-5">
         <div className="overflow-hidden rounded-lg shadow-lg max-w-4xl w-full mx-4">
             <table className="min-w-full divide-y divide-x divide-gray-200 border border-gray-300 text-sm">
             <thead className="bg-gray-200">
                 <tr>
-                <th className="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">User\Item</th>
-                <th className="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Item 1</th>
+                  <th className="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">User\Item
+                  </th>
+                  <th className="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">
+                    
+                  </th>
                 <th className="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Item 2</th>
                 <th className="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Item 3</th>
                 </tr>

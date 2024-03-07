@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
- 
+import LogOutButton from "./LogOutButton";
+
 export default function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
@@ -44,6 +45,7 @@ export default function Navbar({ fixed }) {
                   <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span className="ml-2">閲覧</span>
                 </Link>
               </li>
+              <LogOutButton></LogOutButton>
             </ul>
           </div>
         </div>
