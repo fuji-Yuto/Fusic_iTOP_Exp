@@ -10,6 +10,10 @@ import ExpensesCreatePage from './pages/ExpensesPages/ExpensesCreatePage';
 import ExpensesEditPage from './pages/ExpensesPages/ExpensesEditPage';
 import ExpensesShowPage from './pages/ExpensesPages/ExpensesShowPage';
 
+import UserIndexPage from './pages/UserPages/UserIndexPage';
+import UserCreatePage from './pages/UserPages/UserCreatePage';
+import UserEditPage from './pages/UserPages/UserEditPage';
+
 import LoginPage from './pages/LoginPage'
 
 function App() {
@@ -32,6 +36,10 @@ function App() {
         <Route path="/expenses/create" element={<ExpensesCreatePage />} />
         <Route path="/expenses/show" element={<ExpensesShowPage />} />
         <Route path="/expenses/edit" element={<ExpensesEditPage />} />
+
+        <Route path="/user/index" element={<UserIndexPage />} ></Route>
+        <Route path="/user/create" element={<UserCreatePage />} ></Route>
+        <Route path="/user/edit" element={<UserEditPage/> } ></Route>
         
       </Routes>
 
