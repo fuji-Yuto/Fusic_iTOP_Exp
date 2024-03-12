@@ -27,7 +27,7 @@ function UserIndexPage() {
 
     return (
             <div>
-                <Navbar></Navbar>
+
                 <div className="flex justify-center mt-5">
                 <div className="overflow-hidden rounded-lg shadow-lg max-w-4xl w-full mx-4">
                     <table className="min-w-full divide-y divide-x divide-gray-200 border border-gray-300 text-sm">

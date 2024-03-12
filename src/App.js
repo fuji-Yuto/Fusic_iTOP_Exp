@@ -21,6 +21,7 @@ import LoginPage from './pages/LoginPage'
 
 import { AuthProvider } from './AuthContext';
 import PrivateRoute from './PrivateRoute';
+import Navbar from './components/Navbar';
 
 function App() {
 
@@ -33,7 +34,8 @@ function App() {
           <Route path="/" element={<LoginPage />} />
           <Route path="/forgetpassword" element={ <ForgetPasswordPage/>} />
           
-          <Route element={<PrivateRoute/>}>
+          <Route element={<PrivateRoute />}>
+            
             <Route path="/home" element={<HomePage />} />
 
             <Route path="/event/index" element={<EventsIndexPage />} />
@@ -41,7 +43,7 @@ function App() {
             <Route path="/event/edit/:eventId" element={<EventsEditPage />} />
           
             <Route path="/expenses/index" element={<ExpensesIndexPage />} />
-            <Route path="/expenses/create" element={<ExpensesCreatePage />} />
+            <Route path="/expenses/create/:userId/:eventId" element={<ExpensesCreatePage />} />
             <Route path="/expenses/show" element={<ExpensesShowPage />} />
             <Route path="/expenses/edit" element={<ExpensesEditPage />} />
 

@@ -49,7 +49,7 @@ function EventEditPage() {
 
     return (
         <div>
-            <Navbar></Navbar>
+       
             <div className="w-4/5 bg-gray-200 mx-auto border border-solid border-brack">
                 <h1>{eventId}</h1>
                 

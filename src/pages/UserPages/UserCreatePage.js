@@ -8,7 +8,7 @@ import { getAuth,onAuthStateChanged,createUserWithEmailAndPassword} from "fireba
 
 function UserCreatePage() {
 
-    const [users, setUsers] = useState([{ name: "", email: "", role: "" }]);
+    const [users, setUsers] = useState([{ name: "", email: "", role: "一般" }]);
 
     const navigate = useNavigate();
     const [registertionData, setRegistertionData] = useState(null);
@@ -101,7 +101,7 @@ function UserCreatePage() {
 
     return (
         <div>
-            <Navbar></Navbar>
+
             <div className="max-w-4xl mx-auto p-8">
                 <form onSubmit={handleSubmit} className="space-y-4 bg-white p-4 rounded-lg shadow border border-gray-300">
                     {users.map((user, index) => (
@@ -131,7 +131,7 @@ function UserCreatePage() {
                                 onChange={event => handleInputChange(index, event)}
                                 className="form-select px-4 py-2 border border-gray-300 rounded-md"
                             >
-                                <option value="一般">一般</option>
+                                <option value="一般" selected>一般</option>
                                 <option value="人事">人事</option>
                                 <option value="会計">会計</option>
                                 <option value="代表">代表</option>

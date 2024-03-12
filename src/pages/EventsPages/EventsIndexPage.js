@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar';
 function EventsIndexPage() {
     return (
         <div>
-            <Navbar></Navbar>
+    
             <h1>イベントの一覧（新しい順）</h1>
             <EventTable />
 

@@ -5,8 +5,7 @@ import Navbar from '../../components/Navbar';
 
 function EventCreatePage() {
   return (
-    <div>
-      <Navbar/>      
+    <div>     
       <h1>イベント名の追加</h1>
 
       <EventForm/>
