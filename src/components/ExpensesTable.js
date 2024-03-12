@@ -49,9 +49,23 @@ function ExpensesTable() {
       }, [currentUser.uid]); 
   // データ取得ここまで 
   
-  const navigate = useNavigate(); // ナビゲーション関数の取得
 
-  // ボタンクリックで呼び出される関数
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
+
+  const handleOpenModal = (userId, eventId) => {
+    setSelectedId({ userId, eventId });
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  
+
+
+  const navigate = useNavigate();
   const handleNavigateToExpenseCreate = (userId, eventId) => {
     navigate(`/expenses/create/${userId}/${eventId}`);
   };
@@ -83,8 +97,11 @@ function ExpensesTable() {
                       <p>
                         {expense ? expense.value : '0'}
                       </p>
-                      <button onClick={() => handleNavigateToExpenseCreate(user.id, event.id)}>
-                        Edit
+                      <button className="mr-3" onClick={() => handleNavigateToExpenseCreate(user.id, event.id)}>
+                        新規申請
+                      </button >
+                      <button onClick={() => handleOpenModal(user.id, event.id)}> {/*ここをクリックすると表のidに沿うフィールドの詳細データができるモーダルが移る  */}
+                        詳細
                       </button>
                     </td>
                   );
@@ -95,30 +112,32 @@ function ExpensesTable() {
         </table>
       </div>
 
-      {/* {isModalOpen && (
+    { isModalOpen && (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" onClick={handleCloseModal}>
-          <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-            <div className="mt-3 text-center">
-              <h3 className="text-lg leading-6 font-medium text-gray-900">Edit Expense</h3>
-              <div className="mt-2">
-                <input
-                  type="number"
-                  className="mt-2 px-3 py-2 border rounded-md"
-                  value={currentExpense.amount}
-                  onChange={e => setCurrentExpense({ ...currentExpense, amount: Number(e.target.value) })}
-                />
-              </div>
-              <div className="items-center px-4 py-3">
-                <button
-                  className="px-4 py-2 bg-gray-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-gray-700"
-                  onClick={handleSave}>
-                  Save
-                </button>
-              </div>
+        <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white" onClick={(e) => e.stopPropagation()}>
+          <div className="mt-3 text-center">
+            <h3 className="text-lg leading-6 font-medium text-gray-900">Edit Expense</h3>
+            <div className="mt-2">
+              {selectedId.userId}    
+              {/* <input
+                type="number"
+                className="mt-2 px-3 py-2 border rounded-md"
+                value={currentExpense.amount}
+                onChange={(e) => setCurrentExpense({ ...currentExpense, amount: Number(e.target.value) })}
+              /> */}
+            </div>
+            <div className="items-center px-4 py-3">
+              {/* <button
+                className="px-4 py-2 bg-gray-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-gray-700"
+                onClick={handleSave}>
+                Save
+              </button> */}
             </div>
           </div>
         </div>
-      )} */}
+      </div>
+      )
+    }
     </div>
   );
 }
