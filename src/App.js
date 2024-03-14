@@ -35,8 +35,6 @@ function App() {
           <Route path="/forgetpassword" element={ <ForgetPasswordPage/>} />
           
           <Route element={<PrivateRoute />}>
-            
-            <Route path="/home" element={<HomePage />} />
 
             <Route path="/event/index" element={<EventsIndexPage />} />
             <Route path="/event/create" element={<EventsCreatePage />} />

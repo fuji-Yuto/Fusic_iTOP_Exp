@@ -22,7 +22,7 @@ function LoginPage() {
         signInWithEmailAndPassword(auth, logininfo.email, logininfo.password)
         .then(() => {
             console.log("signin")
-            navigate('/home');
+            navigate('/expenses/index');
             alert("ログインしました。")
         })
         .catch((error) => {
